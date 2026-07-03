@@ -1,0 +1,268 @@
+---
+import Base from "../layouts/Base.astro";
+import { BUY_URL, KIT_PRICE, REVIEWED, CONTACT } from "../config";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      name: "QuantumSOP Readiness Kit",
+      description:
+        "AI governance and post-quantum cryptography compliance documentation for government contractors: disclosure summary, acceptable use policy, human-in-the-loop statement, PQC awareness statement, inventories, and strategic guides.",
+      brand: { "@type": "Brand", name: "QuantumSOP" },
+      offers: {
+        "@type": "Offer",
+        price: String(KIT_PRICE),
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        url: "https://quantumsop.com/readiness-kit",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What format are the documents?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Editable documents you customize with your organization's details. Each is conservatively written to document awareness and oversight rather than assert technical controls you may not have.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do the templates stay current?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Readiness Kit reflects requirements as of its review date, shown on every document. Ongoing updates as regulations change are delivered through the Sentinel Vault subscription, with changes published on the public changelog.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is this legal advice or a compliance certification?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. The Readiness Kit provides documentation and readiness guidance to help you respond credibly. It does not certify compliance. For binding legal interpretation, consult a qualified attorney.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who should use it?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Compliance, operations, security, and proposal staff at government contractors and public-sector vendors. No legal or technical expertise is required to complete the documents correctly.",
+          },
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Base
+  title="Readiness Kit — AI & PQC Compliance Templates"
+  description="Ready-to-customize AI and post-quantum compliance documentation for government contractors. Seven core artifacts, four strategic guides, onboarding included. $497 one-time."
+  docId="QSOP-WEB-002"
+  schema={schema}
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Product · One-Time Purchase</p>
+      <h1>The Readiness Kit</h1>
+      <p class="lede">
+        Everything you need to answer AI and quantum questions in RFPs, security
+        questionnaires, and vendor onboarding — defensibly, consistently, and without
+        overclaiming. Complete the core three documents in under an hour.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={BUY_URL}>Get the Readiness Kit — ${KIT_PRICE}</a>
+        <a class="btn btn-secondary" href="#contents">See what's inside</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contents">
+    <div class="wrap">
+      <p class="eyebrow">What's Inside</p>
+      <h2>Seven core artifacts.</h2>
+      <table class="evidence-table">
+        <caption>Core artifacts · each mapped to a real procurement trigger</caption>
+        <thead>
+          <tr>
+            <th scope="col">Artifact</th>
+            <th scope="col">Triggering question</th>
+            <th scope="col">What it establishes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AI Use Disclosure Summary</strong></td>
+            <td>"Do you use AI?"</td>
+            <td>A safe, high-level disclosure you attach to proposals.</td>
+          </tr>
+          <tr>
+            <td><strong>AI Acceptable Use Policy</strong></td>
+            <td>Governance attestation</td>
+            <td>Shows oversight exists — procurement-safe language, no "ethical AI" fluff.</td>
+          </tr>
+          <tr>
+            <td><strong>AI System / Use Case Inventory (Starter)</strong></td>
+            <td>Mandatory AI inventories</td>
+            <td>Lists where AI is used; keeps every answer consistent.</td>
+          </tr>
+          <tr>
+            <td><strong>Human-in-the-Loop Statement</strong></td>
+            <td>Automated-decision concerns</td>
+            <td>Confirms no unsupervised decisions, in declarative language.</td>
+          </tr>
+          <tr>
+            <td><strong>AI Training &amp; Awareness Acknowledgement Log</strong></td>
+            <td>Workforce assurance</td>
+            <td>Shows staff awareness — simple signature log, audit-friendly.</td>
+          </tr>
+          <tr>
+            <td><strong>Security &amp; PQC Awareness Statement</strong></td>
+            <td>"Are you quantum-ready?"</td>
+            <td>Documented awareness and planning stage, without overclaiming.</td>
+          </tr>
+          <tr>
+            <td><strong>Records Retention &amp; Public Records Mapping (AI-aware)</strong></td>
+            <td>FOIA / public records</td>
+            <td>Shows AI outputs are managed under your retention policy.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 style="margin-top:3rem;">Four strategic guides.</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Procurement Reality Check</h3>
+          <p>How reviewers actually read AI and quantum documentation — what raises flags, what makes them stop asking.</p>
+        </div>
+        <div class="card">
+          <h3>The Language Kill List</h3>
+          <p>The phrases that create liability ("fully compliant," "quantum-safe implemented") and the safer alternatives, side by side.</p>
+        </div>
+        <div class="card">
+          <h3>The 2026 Accountability Collision</h3>
+          <p>Why AI and quantum questions are converging in procurement now, and what's actually binding vs. guidance.</p>
+        </div>
+        <div class="card">
+          <h3>Kit → Vault Boundary Map</h3>
+          <p>Exactly what this Kit covers, what it deliberately doesn't, and when maintained evidence becomes worth it.</p>
+        </div>
+      </div>
+
+      <h2 style="margin-top:3rem;">Plus onboarding that prevents overuse.</h2>
+      <p>
+        An <strong>Onboarding Guide</strong> and <strong>User Instructions with pro tips</strong> walk you through
+        each document: when to complete it, who should own it, how long it takes, and —
+        critically — when to stop. The most important rule in the Kit: never give more
+        documentation than you are asked for.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">How It Works</p>
+      <h2>Three steps to bid-ready.</h2>
+      <div class="card-grid">
+        <div class="card">
+          <p class="eyebrow">Step 1 · ~20 min</p>
+          <h3>Complete the Disclosure Summary</h3>
+          <p>Establish your official answer to "Do you use AI?" — factual, high-level, conservative.</p>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Step 2 · ~30 min</p>
+          <h3>Adopt the Acceptable Use Policy</h3>
+          <p>Leadership reviews and approves. Consistency with the disclosure is the whole game.</p>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Step 3 · ~15 min</p>
+          <h3>Issue the PQC Awareness Statement</h3>
+          <p>Answer quantum questions safely. Most organizations can stop here unless asked for more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap" style="display:flex; flex-wrap:wrap; gap:2.5rem; align-items:flex-start;">
+      <div class="price-panel">
+        <h3>The Readiness Kit</h3>
+        <p class="price">${KIT_PRICE}</p>
+        <p class="price-note">ONE-TIME · EDITABLE DOCUMENTS · REVIEWED {REVIEWED}</p>
+        <ul>
+          <li>7 core AI &amp; PQC artifacts</li>
+          <li>4 strategic guides</li>
+          <li>Onboarding guide + user instructions</li>
+          <li>Question → artifact crosswalk</li>
+        </ul>
+        <a class="btn btn-primary" href={BUY_URL}>Get the Readiness Kit</a>
+      </div>
+      <div style="flex:1 1 340px;">
+        <p class="eyebrow">The Upgrade Path</p>
+        <h2 class="mt-0">When questions repeat, the Vault takes over.</h2>
+        <p>
+          The Kit answers "what should exist, and what is good enough today?" The
+          <strong>Sentinel Vault</strong> answers "how do we maintain, update, and prove this over
+          time" — living inventories, decision logs, incident addenda, and a monitored
+          update stream as regulations change.
+        </p>
+        <p>
+          The Vault opens to a limited founding group.
+          <a href={`mailto:${CONTACT}?subject=Sentinel%20Vault%20early%20access`}>Inquire for early access →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <div class="wrap">
+      <p class="eyebrow">Questions</p>
+      <h2>Straight answers.</h2>
+      <details>
+        <summary>What format are the documents?</summary>
+        <p>
+          Editable documents you customize with your organization's details. Each is
+          conservatively written to document awareness and oversight rather than assert
+          technical controls you may not have.
+        </p>
+      </details>
+      <details>
+        <summary>Do the templates stay current?</summary>
+        <p>
+          The Kit reflects requirements as of its review date, stamped on every document
+          and tracked on the <a href="/changelog">public changelog</a>. Continuous updates
+          are part of the Sentinel Vault subscription.
+        </p>
+      </details>
+      <details>
+        <summary>Is this legal advice or a certification?</summary>
+        <p>
+          No. QuantumSOP provides documentation and readiness guidance — it does not
+          certify compliance or provide legal advice. For binding interpretation,
+          consult a qualified attorney. See the full <a href="/disclaimer">disclaimer</a>.
+        </p>
+      </details>
+      <details>
+        <summary>Why combine AI governance and quantum readiness?</summary>
+        <p>
+          Because procurement combined them first. Both start with the same operational
+          questions — what do we use, who owns it, what documentation proves we acted
+          responsibly — and in 2026 they increasingly appear in the same solicitations
+          and questionnaires.
+        </p>
+      </details>
+      <details>
+        <summary>Do I need technical or legal staff to use it?</summary>
+        <p>
+          No. The Kit is written for compliance, operations, and proposal staff. The
+          user instructions specify who typically owns each document and how long it takes.
+        </p>
+      </details>
+    </div>
+  </section>
+</Base>

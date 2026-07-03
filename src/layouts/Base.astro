@@ -1,0 +1,106 @@
+---
+import "../styles/global.css";
+import { CONTACT, REVIEWED, SITE_REV } from "../config";
+
+interface Props {
+  title: string;
+  description: string;
+  docId?: string;
+  schema?: object;
+}
+
+const { title, description, docId = "QSOP-WEB", schema } = Astro.props;
+const path = Astro.url.pathname;
+
+const nav = [
+  ["/start-here", "Start Here"],
+  ["/readiness-kit", "Readiness Kit"],
+  ["/30-day-roadmap", "Free Roadmap"],
+  ["/changelog", "Changelog"],
+  ["/about", "About"],
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — QuantumSOP</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={`${title} — QuantumSOP`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
+    {schema && (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+    )}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/"><span class="q">Quantum</span>SOP</a>
+        <nav class="site-nav" aria-label="Primary">
+          {nav.map(([href, label]) => (
+            <a href={href} aria-current={path.startsWith(href) ? "page" : undefined}>{label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <div class="doc-control" aria-label="Document control">
+      <div class="wrap">
+        <span>{docId}</span>
+        <span>Rev {SITE_REV}</span>
+        <span class="stamp">Reviewed {REVIEWED}</span>
+        <span>Status: Current</span>
+      </div>
+    </div>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="foot-grid">
+          <div>
+            <p class="mono">QUANTUMSOP</p>
+            <p>AI and post-quantum compliance documentation for government contractors. Conservative, defensible, kept current.</p>
+          </div>
+          <div>
+            <p class="mono">PRODUCT</p>
+            <p>
+              <a href="/readiness-kit">Readiness Kit</a><br />
+              <a href="/30-day-roadmap">Free 30-Day Roadmap</a><br />
+              <a href="/changelog">Template Changelog</a><br />
+              <a href="/glossary">Glossary</a>
+            </p>
+          </div>
+          <div>
+            <p class="mono">COMPANY</p>
+            <p>
+              <a href="/about">About</a><br />
+              <a href="/contact">Contact</a><br />
+              <a href="/disclaimer">Disclaimer</a><br />
+              <a href="/privacy-policy">Privacy Policy</a>
+            </p>
+          </div>
+        </div>
+        <p class="legal">
+          QuantumSOP provides documentation templates and readiness guidance. It does not
+          provide legal advice, certify compliance, or guarantee procurement outcomes.
+          Consult a qualified attorney for legal interpretation. &nbsp;·&nbsp;
+          <a href={`mailto:${CONTACT}`}>{CONTACT}</a> &nbsp;·&nbsp; © 2026 QuantumSOP LLC
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

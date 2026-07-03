@@ -1,0 +1,27 @@
+---
+import Base from "../layouts/Base.astro";
+import { CONTACT } from "../config";
+---
+
+<Base
+  title="Privacy Policy"
+  description="How QuantumSOP collects, uses, and protects your information."
+  docId="QSOP-LEG-002"
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Legal · Effective 02 Jul 2026</p>
+      <h1>Privacy Policy</h1>
+    </div>
+  </section>
+  <section class="section no-rule">
+    <div class="wrap">
+      <p><strong>What we collect.</strong> If you request the free roadmap, purchase a product, or contact us, we collect the information you provide: name, email address, organization, and purchase details. We do not collect sensitive personal information and we do not sell personal data.</p>
+      <p><strong>How we use it.</strong> To deliver products you purchase, send resources you request, provide the Sentinel briefing (regulatory-update emails you can unsubscribe from at any time), and respond to inquiries.</p>
+      <p><strong>Processors.</strong> Payments are processed by Stripe; email and course delivery are handled by our marketing platform. These providers process data under their own privacy terms and safeguards. We do not store payment card numbers.</p>
+      <p><strong>Retention.</strong> Purchase records are retained as required for tax and accounting purposes. Marketing contacts are retained until you unsubscribe or request deletion.</p>
+      <p><strong>Your choices.</strong> You may unsubscribe from emails at any time via the link in each message, and you may request access to or deletion of your personal information by contacting <a href={`mailto:${CONTACT}`}>{CONTACT}</a>.</p>
+      <p><strong>Changes.</strong> Material changes to this policy will be posted on this page with an updated effective date.</p>
+    </div>
+  </section>
+</Base>

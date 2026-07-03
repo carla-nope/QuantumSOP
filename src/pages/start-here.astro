@@ -1,0 +1,60 @@
+---
+import Base from "../layouts/Base.astro";
+import { KIT_PRICE, CONTACT } from "../config";
+---
+
+<Base
+  title="Start Here"
+  description="New to AI and quantum compliance questions in government contracting? Start here: understand what's being asked, get the free roadmap, or get bid-ready with the Readiness Kit."
+  docId="QSOP-WEB-003"
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Orientation</p>
+      <h1>Start where the pressure is.</h1>
+      <p class="lede">
+        Most people land here because a solicitation, questionnaire, or auditor just
+        asked something new. Pick the path that matches your situation.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="card-grid">
+        <div class="card">
+          <p class="eyebrow">Path 1 · "What is all this?"</p>
+          <h3>Get oriented, free.</h3>
+          <p>
+            Download the <strong>30-Day AI &amp; Quantum Readiness Roadmap</strong> — what's being asked in
+            2026, what's binding vs. guidance, and the order to address it in.
+          </p>
+          <p><a class="btn btn-secondary" href="/30-day-roadmap">Get the free roadmap</a></p>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Path 2 · "A deadline is coming."</p>
+          <h3>Get bid-ready.</h3>
+          <p>
+            The <strong>Readiness Kit</strong> gives you every core artifact, the strategic guides, and
+            step-by-step instructions. The core three documents take under an hour.
+          </p>
+          <p><a class="btn btn-primary" href="/readiness-kit">View the Kit — ${KIT_PRICE}</a></p>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Path 3 · "The questions keep repeating."</p>
+          <h3>Maintain and prove it.</h3>
+          <p>
+            If auditors want update cadences, version history, and living inventories,
+            you've crossed into <strong>Sentinel Vault</strong> territory. Founding access is limited.
+          </p>
+          <p><a class="btn btn-secondary" href={`mailto:${CONTACT}?subject=Sentinel%20Vault%20early%20access`}>Inquire about the Vault</a></p>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:2.2rem;">
+        One rule applies on every path: never provide more documentation than you're
+        asked for. Conservative, consistent answers reduce risk more than ambitious ones.
+      </p>
+    </div>
+  </section>
+</Base>

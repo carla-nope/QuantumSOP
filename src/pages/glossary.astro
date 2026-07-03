@@ -1,0 +1,73 @@
+---
+import Base from "../layouts/Base.astro";
+
+const terms = [
+  ["AI Governance", "The policies, roles, documentation, and oversight practices an organization uses to make AI adoption safer, more accountable, and easier to audit."],
+  ["AI Management System (AIMS)", "A structured management system for responsible AI. ISO/IEC 42001 is an emerging global standard for this area."],
+  ["Algorithmic Impact Assessment (AIA)", "A documented review of an AI system's purpose, risks, affected users, mitigation steps, and oversight plan before or during deployment."],
+  ["CBOM", "A Cryptographic Bill of Materials: an inventory of cryptographic assets, algorithms, key lengths, protocols, and implementation details."],
+  ["Crypto-Agility", "The ability to replace, rotate, or update cryptographic methods without breaking core business operations."],
+  ["Harvest Now, Decrypt Later (HNDL)", "The threat model where adversaries collect encrypted data today to decrypt it once quantum computers can break current public-key cryptography."],
+  ["High-Risk AI System", "An AI system used in sensitive contexts such as employment, education, critical infrastructure, public benefits, law enforcement, or access to essential services."],
+  ["Human-in-the-Loop", "A governance and system-design practice that keeps meaningful human review, escalation, and override authority in AI-enabled processes."],
+  ["NIST AI RMF", "The National Institute of Standards and Technology AI Risk Management Framework, organized around govern, map, measure, and manage functions."],
+  ["Post-Quantum Cryptography (PQC)", "Cryptographic algorithms designed to remain secure against future quantum computers capable of breaking today's public-key encryption."],
+  ["Sentinel Vault", "QuantumSOP's subscription tier: a continuously maintained library of living inventories, logs, and evidence artifacts, updated as requirements change."],
+  ["Wrap-Around Disclosure", "A conservative, high-level statement of AI use attached to proposals to establish one consistent official answer across all procurement responses."],
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  name: "QuantumSOP AI & Quantum Compliance Glossary",
+  hasDefinedTerm: terms.map(([name, description]) => ({
+    "@type": "DefinedTerm",
+    name,
+    description,
+  })),
+};
+---
+
+<Base
+  title="Glossary — AI & Quantum Compliance Terms"
+  description="Plain-language definitions of the AI governance and post-quantum terms appearing in RFPs, questionnaires, and vendor onboarding: CBOM, crypto-agility, HNDL, human-in-the-loop, NIST AI RMF, and more."
+  docId="QSOP-WEB-008"
+  schema={schema}
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Reference · Plain Language</p>
+      <h1>The terms reviewers use, defined without jargon.</h1>
+      <p class="lede">
+        When a questionnaire asks about your "CBOM" or "crypto-agility posture," this
+        page is the translation layer. Bookmark it for proposal season.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <table class="evidence-table">
+        <caption>AI &amp; quantum compliance glossary · reviewed against current usage</caption>
+        <thead>
+          <tr>
+            <th scope="col">Term</th>
+            <th scope="col">Definition</th>
+          </tr>
+        </thead>
+        <tbody>
+          {terms.map(([name, description]) => (
+            <tr>
+              <td><strong>{name}</strong></td>
+              <td>{description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="note" style="margin-top:1.6rem;">
+        Definitions are descriptive, not legal interpretations. When a solicitation
+        defines a term differently, the solicitation's definition controls.
+      </p>
+    </div>
+  </section>
+</Base>

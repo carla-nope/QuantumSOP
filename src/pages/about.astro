@@ -1,0 +1,46 @@
+---
+import Base from "../layouts/Base.astro";
+import { CONTACT } from "../config";
+---
+
+<Base
+  title="About QuantumSOP"
+  description="QuantumSOP builds conservative, defensible AI and post-quantum compliance documentation for government contractors — founded by a practitioner from the federal and state compliance world."
+  docId="QSOP-WEB-006"
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h1>Built by someone who has sat on your side of the questionnaire.</h1>
+      <p class="lede">
+        QuantumSOP was founded on a practitioner's background in federal and state
+        compliance and grants administration — the world where documentation either
+        holds up under review or it doesn't.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Why this exists</h2>
+      <p>
+        In 2026, AI-use questions and quantum-readiness questions started appearing in
+        the same solicitations. Small and mid-sized vendors face the same documentation
+        expectations as primes — without the compliance departments. The alternatives
+        are five-figure consulting engagements or improvising under deadline.
+      </p>
+      <p>
+        QuantumSOP is the third option: conservative, procurement-tested documentation
+        with transparent version control, priced below most micro-purchase thresholds.
+      </p>
+      <h2>The operating principles</h2>
+      <ul>
+        <li><strong>Transparency first.</strong> Every template change is documented on the public <a href="/changelog">changelog</a>.</li>
+        <li><strong>Conservative and defensible.</strong> Accuracy over speed; expert review before ambition.</li>
+        <li><strong>Evidence-oriented.</strong> Every document exists because a reviewer asks a specific question.</li>
+        <li><strong>Honest boundaries.</strong> We tell you what the Kit doesn't do, and when you don't need more.</li>
+      </ul>
+      <p>Questions? <a href={`mailto:${CONTACT}`}>{CONTACT}</a></p>
+    </div>
+  </section>
+</Base>

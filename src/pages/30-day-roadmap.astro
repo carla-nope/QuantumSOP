@@ -1,0 +1,66 @@
+---
+import Base from "../layouts/Base.astro";
+import { ROADMAP_FORM_ACTION, CONTACT } from "../config";
+---
+
+<Base
+  title="Free: The 30-Day AI & Quantum Readiness Roadmap"
+  description="A free, conservative 30-day roadmap for government contractors facing AI-use and quantum-readiness questions: what's binding, what's guidance, and the order to address it."
+  docId="QSOP-WEB-004"
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Free Download · Lead Resource</p>
+      <h1>The 30-Day AI &amp; Quantum Readiness Roadmap</h1>
+      <p class="lede">
+        What agencies are actually asking in 2026, what's binding versus guidance, and a
+        realistic 30-day order of operations — awareness and disclosure first, inventory
+        second, decisions third. No fluff, no fear-selling.
+      </p>
+
+      {ROADMAP_FORM_ACTION ? (
+        <form class="inline-form" method="post" action={ROADMAP_FORM_ACTION}>
+          <label for="email" class="eyebrow" style="flex-basis:100%; margin-bottom:0;">Work email</label>
+          <input id="email" type="email" name="email" required placeholder="you@company.com" autocomplete="email" />
+          <button class="btn btn-primary" type="submit">Send me the roadmap</button>
+        </form>
+      ) : (
+        <div class="hero-actions">
+          <a class="btn btn-primary" href={`mailto:${CONTACT}?subject=Send%20me%20the%2030-day%20roadmap`}>
+            Email me the roadmap
+          </a>
+        </div>
+      )}
+
+      <p class="note" style="margin-top:1.6rem; max-width:46rem;">
+        You'll also receive the Sentinel briefing — occasional, signal-only updates when
+        AI or PQC requirements actually change. Unsubscribe anytime. See the
+        <a href="/privacy-policy">privacy policy</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">What's Covered</p>
+      <h2>Days 1–30, in three phases.</h2>
+      <div class="card-grid">
+        <div class="card">
+          <p class="eyebrow">Days 1–10</p>
+          <h3>Awareness &amp; disclosure</h3>
+          <p>Establish your official answers to "Do you use AI?" and "Are you quantum-aware?" before anyone asks.</p>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Days 11–20</p>
+          <h3>Inventory &amp; alignment</h3>
+          <p>Know where AI is used and where cryptography lives, so every future answer stays consistent.</p>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Days 21–30</p>
+          <h3>Decide what's next</h3>
+          <p>Judge whether static readiness is enough for your pipeline — or whether maintained evidence is worth it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

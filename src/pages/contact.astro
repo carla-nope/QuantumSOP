@@ -1,0 +1,23 @@
+---
+import Base from "../layouts/Base.astro";
+import { CONTACT } from "../config";
+---
+
+<Base
+  title="Contact"
+  description="Contact QuantumSOP about the Readiness Kit, Sentinel Vault early access, or partnership inquiries."
+  docId="QSOP-WEB-007"
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h1>Talk to us.</h1>
+      <p class="lede">
+        Questions about the Readiness Kit, Sentinel Vault early access, volume or agency
+        purchases, or partnerships — one address reaches a human:
+      </p>
+      <p style="font-size:1.4rem;"><a href={`mailto:${CONTACT}`}>{CONTACT}</a></p>
+      <p class="note">We respond within one business day. Procurement deadlines get priority — say so in the subject line.</p>
+    </div>
+  </section>
+</Base>

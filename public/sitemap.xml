@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://quantumsop.com/</loc>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://quantumsop.com/#vault</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://quantumsop.com/#glossary</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://quantumsop.com/#faq</loc>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://quantumsop.com/</loc></url>
+  <url><loc>https://quantumsop.com/start-here</loc></url>
+  <url><loc>https://quantumsop.com/readiness-kit</loc></url>
+  <url><loc>https://quantumsop.com/30-day-roadmap</loc></url>
+  <url><loc>https://quantumsop.com/changelog</loc></url>
+  <url><loc>https://quantumsop.com/glossary</loc></url>
+  <url><loc>https://quantumsop.com/about</loc></url>
+  <url><loc>https://quantumsop.com/contact</loc></url>
+  <url><loc>https://quantumsop.com/disclaimer</loc></url>
+  <url><loc>https://quantumsop.com/privacy-policy</loc></url>
 </urlset>
